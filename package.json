@@ -1,0 +1,63 @@
+{
+  "name": "folder-outer",
+  "displayName": "folder-outer",
+  "description": "",
+  "version": "0.0.1",
+  "publisher": "cysgg",
+  "engines": {
+    "vscode": "^1.67.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:folder-outer.helloWorld",
+    "onCommand:folder-outer.create-outer"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "folder-outer.helloWorld",
+        "title": "Hello World"
+      },
+      {
+        "command": "folder-outer.create-outer",
+        "title": "创建入口文件"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "folder-outer.create-outer",
+          "group": "group1"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/glob": "^7.1.4",
+    "@types/mocha": "^9.0.0",
+    "@types/node": "14.x",
+    "@types/uppercamelcase": "^3.0.0",
+    "@types/vscode": "^1.67.0",
+    "@typescript-eslint/eslint-plugin": "^4.31.1",
+    "@typescript-eslint/parser": "^4.31.1",
+    "@vscode/test-electron": "^1.6.2",
+    "eslint": "^7.32.0",
+    "glob": "^7.1.7",
+    "mocha": "^9.1.1",
+    "typescript": "^4.4.3"
+  },
+  "dependencies": {
+    "uppercamelcase": "^3.0.0"
+  }
+}
